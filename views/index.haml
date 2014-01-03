@@ -1,0 +1,14 @@
+%form.form-horizontal
+  %fieldset
+    %legend Select an Exercise
+    .control-group
+      %label.control-label{:for => "exercises"}
+      .controls
+        - @exercises.each do |k,v|
+          %label.radio{:for => "#{k}"}
+            %input{:type => "radio", :name => "exercises", :id => "#{k}", :value => "#{v}"}
+            #{v}
+    .control-group
+      %label.control-label{:for => "buildit"}
+      .controls
+        %button.btn.btn-primary{:id => "buildit", :name => "buildit"} Build It!
